@@ -14,7 +14,7 @@ class CitySerializer(serializers.ModelSerializer):
 class ForecastSerializer(serializers.ModelSerializer):
     class Meta:
         model = Forecast
-        fields = ['id', 'city', 'date', 'temperature', 'humidity', 'wind_speed']
+        fields = ['id', 'city', 'date', 'predicted_temperature', 'predicted_humidity', 'predicted_wind_speed']
 
 class FavoriteCitySerializer(serializers.ModelSerializer):
     class Meta:

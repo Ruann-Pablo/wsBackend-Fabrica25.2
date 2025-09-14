@@ -174,17 +174,3 @@ Resposta:
 ```
 
 ---
-
-## 🐳 Rodando com Docker (opcional)
-
-```bash
-docker-compose up --build
-```
-
-Isso irá subir o **PostgreSQL** e a **API Django**.
-
----
-
-## 📜 Licença
-
-Este projeto foi desenvolvido apenas para fins de estudo/desafio técnico.

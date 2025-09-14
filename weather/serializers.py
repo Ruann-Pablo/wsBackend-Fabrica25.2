@@ -1,5 +1,6 @@
+from rest_framework.response import Response
 from rest_framework import serializers
-from .models import User, City, Forecast, FavoriteCity
+from .models import User, FavoriteCity
 
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, required=True)
@@ -26,18 +27,8 @@ class UserSerializer(serializers.ModelSerializer):
             instance.set_password(password)
         instance.save()
         return instance
-
-class CitySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = City
-        fields = ['id', 'name', 'country']
-
-class ForecastSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Forecast
-        fields = ['id', 'city', 'date', 'predicted_temperature', 'predicted_humidity', 'predicted_wind_speed']
-
 class FavoriteCitySerializer(serializers.ModelSerializer):
+    user = serializers.StringRelatedField(read_only=True)
     class Meta:
         model = FavoriteCity
-        fields = ['id', 'user', 'city']
+        fields = ['id', 'city', 'country', 'user']

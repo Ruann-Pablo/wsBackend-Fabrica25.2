@@ -9,6 +9,7 @@ class User(AbstractUser):
     def __str__(self):
         return self.username
 
+
 class FavoriteCity(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='favorite_cities')
     city = models.CharField(max_length=100)

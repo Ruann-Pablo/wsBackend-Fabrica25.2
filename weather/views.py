@@ -28,6 +28,7 @@ class UserViewSet(viewsets.ModelViewSet):
             return [AllowAny()]  
         return [IsAuthenticated()]
 
+
 class FavoriteCityViewSet(viewsets.ModelViewSet):
     serializer_class = FavoriteCitySerializer
     permission_classes = [IsAuthenticated]
